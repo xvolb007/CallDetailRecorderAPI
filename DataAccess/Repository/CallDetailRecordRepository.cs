@@ -1,4 +1,6 @@
-﻿namespace DataAccess.Repository
+﻿using Models;
+
+namespace DataAccess.Repository
 {
     public class CallDetailRecordRepository : ICallDetailRecordRepository
     {
@@ -6,6 +8,11 @@
         public CallDetailRecordRepository(ApplicationDbContext context)
         {
             _context = context;
+        }
+        public void AddCallDetailRecord(CallDetailRecord callDetailRecord)
+        {
+            _context.CallDetailRecords.Add(callDetailRecord);
+            _context.SaveChanges();
         }
     }
 }
