@@ -1,0 +1,6 @@
+@CallDetailRecorderAPI_HostAddress = http://localhost:5139
+
+GET {{CallDetailRecorderAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
