@@ -11,5 +11,13 @@ namespace DataAccess
         }
 
         public DbSet<CallDetailRecord> CallDetailRecords { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<CallDetailRecord>()
+                .Property(c => c.Cost)
+                .HasColumnType("decimal(18,3)");
+        }
     }
 }
